@@ -85,8 +85,6 @@ requirements.txt           # Dependencias
 .env.template              # Ejemplo de configuración
 ```
 
-## Configuración
-
 ## Solución de Problemas
 
 ### Sesiones expiran demasiado rápido
