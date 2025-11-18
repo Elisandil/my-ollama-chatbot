@@ -1,25 +1,25 @@
-# 🤖 Chatbot con Llama3 via Ollama
+# MyChatbot con Llama3 via Ollama
 
 Chatbot inteligente construido con LangChain, Ollama y Gradio, con gestión avanzada de sesiones y persistencia de conversaciones.
 
-## ✨ Características
+## Características
 
-- 🔄 **Streaming de respuestas** en tiempo real
-- 💾 **Persistencia de historial** con SQLite
-- 🔐 **Gestión de sesiones** por usuario con UUID único
-- ⏱️ **Heartbeat automático** para mantener sesiones activas
-- 🧹 **Limpieza automática** de sesiones inactivas
-- 📝 **Logging completo** para debugging
-- ⚙️ **Configuración flexible** mediante variables de entorno
-- 🛡️ **Manejo robusto de errores**
+-  **Streaming de respuestas** en tiempo real
+-  **Persistencia de historial** con SQLite
+-  **Gestión de sesiones** por usuario con UUID único
+-  **Heartbeat automático** para mantener sesiones activas
+-  **Limpieza automática** de sesiones inactivas
+-  **Logging completo** para debugging
+-  **Configuración flexible** mediante variables de entorno
+-  **Manejo robusto de errores**
 
-## 📋 Requisitos Previos
+## Requisitos Previos
 
 - Python 3.8+
 - Ollama instalado y en ejecución
 - Modelo Llama3 descargado en Ollama
 
-## 🚀 Instalación
+## Instalación
 
 ### 1. Instalar Ollama
 
@@ -45,7 +45,15 @@ cd chatbot-llama3
 
 # Crear entorno virtual
 python -m venv venv
-source venv/bin/activate  # En Windows: venv\Scripts\activate
+
+# Linux/Mac
+source venv/bin/activate
+# Windows (Git Bash)
+source venv/Scripts/activate
+# Windows (CMD)
+venv\Scripts\activate
+# Windows (PowerShell)
+venv\Scripts\Activate.ps1
 
 # Instalar dependencias
 pip install -r requirements.txt
@@ -61,7 +69,7 @@ cp .env.example .env
 nano .env
 ```
 
-## 🎮 Uso
+## Uso
 
 ### Iniciar el chatbot
 
@@ -78,7 +86,7 @@ El navegador se abrirá automáticamente en `http://localhost:7860`
 ollama list
 ```
 
-## 🏗️ Estructura del Proyecto
+## Estructura del Proyecto
 
 ```
 app/
@@ -95,54 +103,9 @@ requirements.txt           # Dependencias
 .env.example              # Ejemplo de configuración
 ```
 
-## ⚙️ Configuración
+## Configuración
 
-### Variables de Entorno Disponibles
-
-| Variable | Descripción | Por Defecto |
-|----------|-------------|-------------|
-| `MODEL_NAME` | Modelo de Ollama a usar | `llama3:latest` |
-| `OLLAMA_BASE_URL` | URL del servidor Ollama | `http://localhost:11434` |
-| `MAX_TOKENS` | Máximo de tokens por respuesta | `2048` |
-| `SESSION_TIMEOUT` | Timeout de sesión (segundos) | `600` (10 min) |
-| `DB_PATH` | Ruta de base de datos | `sqlite:///chat_history.db` |
-| `LOG_LEVEL` | Nivel de logging | `INFO` |
-| `GRADIO_SERVER_PORT` | Puerto del servidor | `7860` |
-| `MAX_MESSAGE_LENGTH` | Longitud máxima de mensaje | `4000` |
-| `MAX_HISTORY_MESSAGES` | Mensajes máximos en historial | `50` |
-
-## 🔧 Mejoras Implementadas
-
-### Respecto a la Versión Original
-
-1. ✅ **Sistema de sesiones corregido**: Usa UUID único por usuario en lugar de PID compartido
-2. ✅ **Prompt mejorado**: Sistema prompt más útil y específico
-3. ✅ **Manejo de errores robusto**: Try-catch en todas las operaciones críticas
-4. ✅ **Validación de Ollama**: Verifica disponibilidad antes de iniciar
-5. ✅ **Configuración externa**: Variables de entorno en lugar de hardcoded
-6. ✅ **Logging apropiado**: Sistema de logging completo
-7. ✅ **Thread-safe**: Uso de locks para operaciones concurrentes
-8. ✅ **Validación de entrada**: Sanitización de inputs del usuario
-9. ✅ **UI mejorada**: Ejemplos, mejor UX, temas de Gradio
-
-## 🐛 Solución de Problemas
-
-### Error: "No se puede conectar con Ollama"
-
-```bash
-# Verificar que Ollama está activo
-ollama serve
-
-# En otra terminal
-ollama list
-```
-
-### Error: "Modelo no encontrado"
-
-```bash
-# Descargar el modelo
-ollama pull llama3:latest
-```
+## Solución de Problemas
 
 ### Sesiones expiran demasiado rápido
 
@@ -159,7 +122,7 @@ rm chat_history.db
 python run.py
 ```
 
-## 📊 Monitoreo
+## Monitoreo
 
 El sistema genera logs detallados:
 
@@ -169,7 +132,7 @@ El sistema genera logs detallados:
 2024-XX-XX XX:XX:XX - session_manager - INFO - Limpiadas 2 sesiones. Activas: 5
 ```
 
-## 🤝 Contribuciones
+## Contribuciones
 
 Las contribuciones son bienvenidas. Por favor:
 
@@ -179,17 +142,10 @@ Las contribuciones son bienvenidas. Por favor:
 4. Push a la rama (`git push origin feature/AmazingFeature`)
 5. Abre un Pull Request
 
-## 📝 Licencia
+## Licencia
 
 Este proyecto está bajo la Licencia MIT.
 
-## 👤 Autor
+## Autor
 
 **Antonio Ortega**
-
-## 🙏 Agradecimientos
-
-- [LangChain](https://python.langchain.com/) - Framework de LLM
-- [Ollama](https://ollama.com/) - Servidor de modelos locales
-- [Gradio](https://gradio.app/) - UI para ML
-- [Meta](https://ai.meta.com/) - Modelo Llama3
