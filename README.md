@@ -63,7 +63,7 @@ pip install -r requirements.txt
 
 ```bash
 # Copiar archivo de ejemplo
-cp .env.example .env
+cp .env.template .env
 
 # Editar según tus necesidades
 nano .env
