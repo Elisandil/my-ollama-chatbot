@@ -2,18 +2,7 @@
 
 Chatbot inteligente construido con LangChain, Ollama y Gradio, con gestión avanzada de sesiones y persistencia de conversaciones.
 
-## Características
-
--  **Streaming de respuestas** en tiempo real
--  **Persistencia de historial** con SQLite
--  **Gestión de sesiones** por usuario con UUID único
--  **Heartbeat automático** para mantener sesiones activas
--  **Limpieza automática** de sesiones inactivas
--  **Logging completo** para debugging
--  **Configuración flexible** mediante variables de entorno
--  **Manejo robusto de errores**
-
-## Requisitos Previos
+## Requisitos
 
 - Python 3.8+
 - Ollama instalado y en ejecución
@@ -79,13 +68,6 @@ python run.py
 
 El navegador se abrirá automáticamente en `http://localhost:7860`
 
-### Verificar que Ollama está activo
-
-```bash
-# En otra terminal
-ollama list
-```
-
 ## Estructura del Proyecto
 
 ```
@@ -100,7 +82,7 @@ app/
 
 run.py                     # Punto de entrada
 requirements.txt           # Dependencias
-.env.example              # Ejemplo de configuración
+.env.template              # Ejemplo de configuración
 ```
 
 ## Configuración
@@ -131,16 +113,6 @@ El sistema genera logs detallados:
 2024-XX-XX XX:XX:XX - chatbot_logic - INFO - Procesando pregunta para sesión 12345678...
 2024-XX-XX XX:XX:XX - session_manager - INFO - Limpiadas 2 sesiones. Activas: 5
 ```
-
-## Contribuciones
-
-Las contribuciones son bienvenidas. Por favor:
-
-1. Fork el proyecto
-2. Crea una rama para tu feature (`git checkout -b feature/AmazingFeature`)
-3. Commit tus cambios (`git commit -m 'Add AmazingFeature'`)
-4. Push a la rama (`git push origin feature/AmazingFeature`)
-5. Abre un Pull Request
 
 ## Licencia
 
