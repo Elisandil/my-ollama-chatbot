@@ -86,7 +86,7 @@ def main():
         )
         
     except KeyboardInterrupt:
-        logger.info("\n👋 Aplicación detenida por el usuario")
+        logger.info("\nAplicación detenida por el usuario")
     except Exception as e:
-        logger.error(f"❌ Error fatal: {e}", exc_info=True)
+        logger.error(f"Error fatal: {e}", exc_info=True)
         raise

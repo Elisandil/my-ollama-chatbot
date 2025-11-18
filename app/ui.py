@@ -66,7 +66,7 @@ def create_interface():
     Crea la interfaz de Gradio con gestión de sesiones mejorada.
     """
     with gr.Blocks(
-        title="Chatbot con Llama3",
+        title="MyChatbot con Llama3",
         theme=gr.themes.Soft()
     ) as iface:
         session_state = gr.State(value=initialize_session)
@@ -77,23 +77,12 @@ def create_interface():
             inputs=[session_state],
             outputs=None
         )
-
-        gr.Markdown("#Chatbot con Llama3 via Ollama")
+        gr.Markdown("# MyChatbot con Llama3 via Ollama")
         gr.Markdown("Asistente de IA construido con LangChain y Gradio")
         
         chat_interface = gr.ChatInterface(
             fn=chatbot,
             additional_inputs=[session_state],
-            title=None,
-            description="Escribe tu mensaje y presiona Enter",
-            examples=[
-                "¿Qué puedes hacer?",
-                "Explícame qué es Python en términos simples",
-                "Dame consejos para aprender programación"
-            ],
-            retry_btn="🔄 Reintentar",
-            undo_btn="↩️ Deshacer",
-            clear_btn="🗑️ Limpiar chat",
         )
     
     return iface
