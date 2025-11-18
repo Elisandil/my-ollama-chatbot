@@ -1,0 +1,14 @@
+# Core dependencies
+langchain>=0.1.0
+langchain-community>=0.0.20
+langchain-ollama>=0.1.0
+gradio>=4.0.0
+
+# Database
+sqlalchemy>=2.0.0
+
+# HTTP requests (para verificar Ollama)
+requests>=2.31.0
+
+# Opcional: para mejor logging y monitoreo
+python-dotenv>=1.0.0 
