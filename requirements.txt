@@ -10,5 +10,5 @@ sqlalchemy>=2.0.0
 # HTTP requests (para verificar Ollama)
 requests>=2.31.0
 
-# Opcional: para mejor logging y monitoreo
+# Environment variable
 python-dotenv>=1.0.0 
